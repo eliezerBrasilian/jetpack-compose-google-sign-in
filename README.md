@@ -4,10 +4,23 @@ https://github.com/eliezerBrasilian/jetpack-compose-google-sign-in/assets/938469
 
 ## How to use this package
 
-- import our package in build.gradle(module)
-
+- import the package in build.gradle(module)
+ 
 ```kotlin
 implementation("com.github.eliezerBrasilian:jetpack-compose-packages:v1.1.0")
+```
+
+- import the jitpack dependency
+
+```kotlin
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        maven { url = uri("https://jitpack.io")  } //add me please
+    }
+}
 ```
 
 - Example of use
