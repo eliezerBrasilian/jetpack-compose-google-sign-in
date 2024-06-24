@@ -1,1 +1,42 @@
 # jetpack-compose-google-sign-in
+
+https://github.com/eliezerBrasilian/jetpack-compose-google-sign-in/assets/93846923/275f9a8e-24c1-4e81-ad1f-3bbe52054d06
+
+## How to use this package
+
+- import our package in build.gradle(module)
+
+```kotlin
+implementation("com.github.eliezerBrasilian:jetpack-compose-packages:v1.1.0")
+```
+
+- Example of use
+
+```kotlin
+
+val clientId = "your_web_client_inside_google_cloud"
+
+val context = LocalContext.current
+
+val onClickGoogleSignIn = rememberGoogleSignUp(clientId = clientId,
+context = LocalContext.current,
+onSuccess = { result ->
+
+ Log.d(AppTag, "id:${result.id}")
+ Log.d(AppTag, "email: ${result.email}" )
+ Log.d(AppTag, "name: ${result.displayName}" )
+},
+    onError = {
+Toast.makeText(context,
+"Falha ao logar com Google ❌", Toast.LENGTH_SHORT).show()
+})
+
+Box(modifier = Modifier.fillMaxSize(),
+contentAlignment = Alignment.Center){
+  Column(verticalArrangement = Arrangement.spacedBy(10.dp)){
+  Button(onClick = onClickGoogleSignIn) {
+    Text(text = "Enter with Google")
+}
+}}
+
+```
