@@ -50,10 +50,8 @@ Toast.makeText(context,
 
 Box(modifier = Modifier.fillMaxSize(),
 contentAlignment = Alignment.Center){
-  Column(verticalArrangement = Arrangement.spacedBy(10.dp)){
   Button(onClick = onClickGoogleSignIn) {
     Text(text = "Enter with Google")
-   }
   } 
  }
 
