@@ -10,7 +10,7 @@ https://github.com/eliezerBrasilian/jetpack-compose-google-sign-in/assets/938469
 implementation("com.github.eliezerBrasilian:jetpack-compose-packages:v1.1.0")
 ```
 
-- import the jitpack dependency
+- import the jitpack dependency in settings gradle
 
 ```kotlin
 dependencyResolutionManagement {
@@ -27,12 +27,16 @@ dependencyResolutionManagement {
 
 ```kotlin
 
+@Composable
+fun MyApp(){
+
 val clientId = "your_web_client_inside_google_cloud"
 
 val context = LocalContext.current
 
-val onClickGoogleSignIn = rememberGoogleSignUp(clientId = clientId,
-context = LocalContext.current,
+val onClickGoogleSignIn = rememberGoogleSignUp(
+clientId = clientId,
+context = context,
 onSuccess = { result ->
 
  Log.d(AppTag, "id:${result.id}")
@@ -49,7 +53,10 @@ contentAlignment = Alignment.Center){
   Column(verticalArrangement = Arrangement.spacedBy(10.dp)){
   Button(onClick = onClickGoogleSignIn) {
     Text(text = "Enter with Google")
+   }
+  } 
+ }
+
 }
-}}
 
 ```
