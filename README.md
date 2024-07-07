@@ -62,4 +62,4 @@ contentAlignment = Alignment.Center){
 ##Entre pra nossa comunidade no Discord 
 Comunidade no Discord:
 
-https://discord.com/invite/3nPb4dz5
+[https://discord.com/invite/3nPb4dz5](https://discord.gg/RG9s8kWyn8)
